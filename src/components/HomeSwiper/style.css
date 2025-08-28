@@ -227,7 +227,3 @@
     opacity:0;
     width:1px;
   }
-  
-  .slide:not(.swiper-slide-active) {
-    display: none;
-  }
