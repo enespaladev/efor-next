@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://eu-central.storage.cloudconvert.com/tasks/098f76cf-d7e8-4d33-a9da-3ccdcb3816d2/Courgette-Regular.woff2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20241026%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20241026T084940Z&X-Amz-Expires=86400&X-Amz-Signature=b5ff750eb434ce03a6e68f3ed2ca332f254c20ca504fc9ffd767f3fe753644d9&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22Courgette-Regular.woff2%22&response-content-type=font%2Fwoff2&x-id=GetObject

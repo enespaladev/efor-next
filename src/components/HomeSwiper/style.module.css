@@ -1,0 +1,299 @@
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+
+/* .home-banner-slider {
+  position: relative;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  overflow: hidden;
+  width: 100%;
+  height: 700px;
+  z-index: 0;
+}
+
+@media (max-width: 991px) {
+  .home-banner-slider {
+    height: 600px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-banner-slider {
+    display: none;
+  }
+}
+
+.home-banner-slider .swiper-slide {
+  overflow: hidden;
+  color: #fff;
+}
+
+.home-banner-slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-banner-slider .swiper-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.home-banner-slider .slide-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+} */
+
+/* Ana slider container - Sabit yükseklik garantisi */
+.home-banner-slider {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Sabit yükseklik - CLS'i önler */
+  overflow: hidden;
+  z-index: 0;
+  min-height: 600px; /* Minimum yükseklik garantisi */
+}
+
+@media (max-width: 991px) {
+  .home-banner-slider {
+    height: 500px;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-banner-slider {
+    display: none;
+  }
+}
+
+/* Swiper slide stilleri */
+.home-banner-slider .swiper-slide {
+  overflow: hidden;
+  color: #fff;
+  height: 100%;
+}
+
+.home-banner-slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-banner-slider .swiper-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Navigation butonları */
+.home-banner-slider .swiper-button-prev,
+.home-banner-slider .swiper-button-next {
+  background: transparent;
+  width: 55px;
+  height: 55px;
+  line-height: 53px;
+  margin-top: -27.5px; /* Merkezi hizalama için height'in yarısı */
+  position: absolute;
+  text-align: center;
+  border: 2px solid #000229;
+  border-radius: 55px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%; /* Dikey merkez */
+}
+
+.home-banner-slider:hover .swiper-button-prev,
+.home-banner-slider:hover .swiper-button-next {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+}
+
+.home-banner-slider .swiper-button-prev {
+  left: 25px;
+  transform: translateX(50px);
+}
+
+.home-banner-slider:hover .swiper-button-prev {
+  transform: translateX(0);
+}
+
+.home-banner-slider .swiper-button-next {
+  right: 25px;
+  transform: translateX(-50px);
+}
+
+.home-banner-slider:hover .swiper-button-next {
+  transform: translateX(0);
+}
+
+.home-banner-slider .swiper-button-prev svg,
+.home-banner-slider .swiper-button-next svg {
+  color: #000229;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 767px) {
+  .home-banner-slider .swiper-button-prev,
+  .home-banner-slider .swiper-button-next {
+    display: none;
+  }
+}
+
+/* Pagination stilleri */
+.home-banner-slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  text-align: left;
+  line-height: 12px;
+  font-size: 12px;
+  color: #000;
+  opacity: 0.3;
+  background: #fff;
+  transition: all .2s ease;
+}
+
+.home-banner-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.home-banner-slider .swiper-container-horizontal > .swiper-pagination-bullets,
+.home-banner-slider .swiper-pagination-custom,
+.home-banner-slider .swiper-pagination-fraction {
+  bottom: 30px;
+}
+
+@media screen and (min-width: 992px) {
+  .home-banner-slider .swiper-container-horizontal > .swiper-pagination-bullets,
+  .home-banner-slider .swiper-pagination-custom,
+  .home-banner-slider .swiper-pagination-fraction {
+    display: none;
+  }
+}
+
+.swiper-pagination {
+  text-align: left;
+}
+
+.home-banner-slider .swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 50px;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 767px) {
+  .home-banner-slider .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 30px;
+  }
+}
+
+/* Geliştirilmiş Skeleton Animation */
+.skeleton-container {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height: 100%; /* slider ile aynı yükseklik */
+  position: relative;
+}
+
+.skeleton-slide {
+  flex: 1 0 100%;
+  background: #e0e0e0; /* açık gri renk */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Skeleton üzerine fake content overlay */
+.skeleton-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(224,224,224,0) 0%,
+    rgba(245,245,245,0.6) 50%,
+    rgba(224,224,224,0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive skeleton düzenlemeleri */
+@media (max-width: 991px) {
+  .skeleton-slide::after {
+    width: 250px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skeleton-slide::after {
+    width: 200px;
+    height: 80px;
+  }
+}
+
+.swiper-prevent-content-shift {
+  --swiper-slidesPerView: 1;
+  --swiper-spaceBetween: 16px;
+  --swiper-SwiperSlide-width: calc(
+    (100%
+    - ( var(--swiper-slidesPerView) - 1 )
+    * var(--swiper-spaceBetween))
+    / var(--swiper-slidesPerView)
+  );
+
+  .swiper-slide {
+    width: var(--swiper-SwiperSlide-width);
+    /* Only horizontal swipers need this because vertical ones have fixed width and height */
+    margin-left: var(--swiper-spaceBetween);
+  }
+}
+
+.swiper-main .swiper-slide:not(:first-child) {
+  opacity:0;
+  width:1px;
+}
+
+.slide:not(.swiper-slide-active) {
+  display: none;
+}

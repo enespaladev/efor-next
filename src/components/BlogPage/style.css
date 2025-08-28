@@ -1,0 +1,299 @@
+.blogSection{
+    background-color: rgb(255, 255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 85rem;
+    padding-top: 100px;
+}
+
+.blogTitle{
+    font-size: 48px;
+}
+
+.post-item {
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    transition: all .2s ease-in-out;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.post-item:hover {
+    border: 1px solid #F09114;
+}
+
+.post-item .post__img {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.post-item .post__img img {
+    max-width: 100% !important;
+}
+
+.post-item .post__img:before,
+.post-item .post__img:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.post-item .post__img:after {
+    opacity: 0.5;
+}
+
+.post-item .post__img:before,
+.post-item .post__img:hover:before {
+    right: 0;
+    top: 0;
+}
+
+.post-item .post__img:after,
+.post-item .post__img:hover:after {
+    left: 0;
+    bottom: 0;
+}
+
+.post-item .post__img:hover:before,
+.post-item .post__img:hover:after {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+/*  */
+
+.post-item .post__img__mobile {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    width: 382px;
+    height: 275px;
+}
+
+.post-item .post__img__mobile:before,
+.post-item .post__img__mobile:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.post-item .post__img__mobile:after {
+    opacity: 0.5;
+}
+
+.post-item .post__img__mobile:before,
+.post-item .post__img__mobile:hover:before {
+    right: 0;
+    top: 0;
+}
+
+.post-item .post__img__mobile:after,
+.post-item .post__img__mobile:hover:after {
+    left: 0;
+    bottom: 0;
+}
+
+.post-item .post__img__mobile:hover:before,
+.post-item .post__img__mobile:hover:after {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.post-item .post__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.post-item .post__meta>* {
+    margin-right: 8px;
+    margin-bottom: 11px;
+}
+
+.post-item .post__meta .post__meta-cat,
+.post-item .post__meta .post__meta-tag {
+    position: relative;
+    background-color: #c7a254;
+    color: #ffffff;
+    line-height: 18px;
+    padding-left: 5px;
+    padding-right: 3px;
+}
+
+.post-item .post__meta .post__meta-cat:before,
+.post-item .post__meta .post__meta-cat:after,
+.post-item .post__meta .post__meta-tag:before,
+.post-item .post__meta .post__meta-tag:after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    z-index: -1;
+    width: 20px;
+    height: 9px;
+    background-color: #c7a254;
+}
+
+.post-item .post__meta .post__meta-cat:before,
+.post-item .post__meta .post__meta-tag:before {
+    top: 0;
+    -webkit-transform: skewX(-45deg);
+    -moz-transform: skewX(-45deg);
+    -ms-transform: skewX(-45deg);
+    -o-transform: skewX(-45deg);
+    transform: skewX(-45deg);
+}
+
+.post-item .post__meta .post__meta-cat:after,
+.post-item .post__meta .post__meta-tag:after {
+    bottom: 0;
+    -webkit-transform: skewX(45deg);
+    -moz-transform: skewX(45deg);
+    -ms-transform: skewX(45deg);
+    -o-transform: skewX(45deg);
+    transform: skewX(45deg);
+}
+
+.post-item .post__meta .post__meta-cat a,
+.post-item .post__meta .post__meta-tag a {
+    position: relative;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1;
+    padding-right: 5px;
+}
+
+.post-item .post__meta .post__meta-cat a:hover,
+.post-item .post__meta .post__meta-tag a:hover {
+    color: #282828;
+}
+
+.post-item .post__meta .post__meta-cat a:after,
+.post-item .post__meta .post__meta-tag a:after {
+    content: ",";
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+}
+
+.post-item .post__meta .post__meta-cat a:last-child:after,
+.post-item .post__meta .post__meta-tag a:last-child:after {
+    display: none;
+}
+
+.post-item .post__meta .post__meta-cat span,
+.post-item .post__meta .post__meta-tag span {
+    font-size: 13px;
+    padding-right: 5px;
+}
+
+.post-item .post__meta .post__meta-date,
+.post-item .post__meta .post__meta-comments-count {
+    font-size: 13px;
+    line-height: 1;
+    color: #616161;
+}
+
+.post-item .post__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+    margin-bottom: 13px;
+}
+
+.post-item .post__title a {
+    color: #282828;
+}
+
+.post-item .post__title a:hover {
+    color: #c7a254;
+}
+
+.post-item .post__desc {
+    margin-bottom: 0;
+    font-family: InterVariable, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-weight: 600;
+    text-align: justify;
+    color: rgb(82 82 91 / 1);
+}
+
+.post-item .btn__link {
+    margin-top: 23px;
+}
+
+.post-item .post__content {
+    padding: 25px;
+}
+
+.post-item .post__content .post__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    color: #9a9a9a;
+    font-weight: 900;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 100px;
+    padding: 0 20px;
+    margin-top: 20px;
+    background-color: #efefef;
+    transition: all .2s ease-in-out;
+}
+
+.post-item .post__content .post__button:hover {
+    color: #fff;
+    background-color: #F09114;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .post-item .post__title {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+
+    .post-item .post__content {
+        padding: 15px;
+    }
+
+    .post-item .btn__link {
+        margin-top: 10px;
+    }
+
+    .post-item .post__desc {
+        padding-left: 0;
+        font-size: 12px;
+        line-height: 22px;
+        margin-bottom: 15px;
+    }
+
+    .post__content .post__button{
+        font-size: 12px;
+    }
+}

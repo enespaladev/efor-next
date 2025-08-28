@@ -1,0 +1,56 @@
+@media (min-width: 1200px) {
+    .fs-xl-10 {
+        font-size: 3.24732rem !important;
+    }
+}
+
+.shopping-banner{
+    color: #485761;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.shopping-banner:hover {
+    border-color: transparent;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .1)
+}
+
+.shopping-banner-img{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 25px;
+}
+
+@media(max-width:767px) {
+    .shopping-banner {
+        height: 100%;
+        padding: 20px 10px
+    }
+  
+    .shopping-banner .shopping-banner-img {
+      width: 50px !important;
+      height: 50px !important;
+    }
+}
+
+.title--xl{
+    font-size: 2.8rem;
+    line-height: 1.4em;
+    font-weight: 600;
+}
+
+.title {
+    font-style: normal;
+    line-height: 1.3em;
+    color: #262c32;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-family: 'Gilmer', sans-serif;
+}
+
+.title span{
+    display: block;
+}
+
+.title span.gray{
+    color: #545d64;
+}

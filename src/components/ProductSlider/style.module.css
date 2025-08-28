@@ -1,0 +1,205 @@
+.homeProductSliderTitle {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    color: #14183e;
+}
+.homeProductSliderText {
+    font-family: 'Gilmer', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(75, 85, 99, 1);
+    padding-bottom: 50px;
+}
+
+.ProductSliderSection{
+    padding: 50px 0 50px 0;
+    overflow: hidden;
+}
+
+.ProductSwiper{
+    position: relative;
+    height: 100%;
+    /* padding: 50px 0px 50px 0px; */
+    margin-top: 50px;
+    min-height: 350px;
+}
+
+.ProductSwiper .swiper{
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible !important;
+}
+
+.ProductSwiper .swiper .swiper-wrapper::before,
+.ProductSwiper .swiper .swiper-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26%;
+    height: 160%;
+    z-index: 5;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);
+    user-select: none;
+    pointer-events: none;
+}
+
+.list .item{
+    display: block;
+    height: 100%;
+    position: relative;
+}
+
+.list .item .title{
+    font-family: 'Gilmer', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 4px 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    color: black;
+    opacity: 0;
+    transition: all .3s ease;
+    z-index: 5;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-color:  #dedede;
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255);
+    transform: translateY(-50%);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+:global(.swiper-slide-active) .list .item .title{
+    opacity: 1 !important;
+}
+
+.list .item .img{
+    /* position: relative; */
+    display: block;
+    background: #ededed;
+    transition: all .3s ease;
+    overflow: hidden;
+    padding-bottom: 56%;
+    border-radius: 10px;
+    border: 1.5px solid #dedede;
+    box-shadow: rgba(237, 110, 20, 0.4) 3px 3px, rgba(237, 110, 20, 0.3) 6px 6px, rgba(237, 110, 20, 0.2) 9px 9px, rgba(237, 110, 20, 0.1) 12px 12px, rgba(237, 110, 20, 0.05) 15px 15px;
+}
+
+.list .item .img img{
+    transition: 0.2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 25px;
+}
+
+.list3 .item .title span {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.list3 .item:hover .title {
+    background: #353535b4;
+    color: white;
+}
+
+.ProductSwiper .swiper-button-next{
+    left: auto !important;
+    right: 0;
+}
+
+.ProductSwiper .swiper .swiper-button-prev,
+.ProductSwiper .swiper .swiper-button-next{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #222222;
+    margin: 0 15px 0 15px;
+    
+}
+
+.ProductSwiper .swiper .swiper-button-prev:hover,
+.ProductSwiper .swiper .swiper-button-next:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+    .ProductSwiper .swiper-slide-active{
+        transform: scale(1.7);
+        position: relative;
+        z-index: 15;
+    }
+}
+
+@media(max-width: 767px) {
+    .homeProductSliderTitle {
+        font-size: 2rem;
+    }
+
+    .homeProductSliderText {
+        font-size: 1rem;
+    }
+
+    .ProductSwiper{
+        padding: 0px 5px 0px 5px;
+    }
+
+    .ProductSwiper .swiper .swiper-button-prev,
+    .ProductSwiper .swiper .swiper-button-next{        
+        font-size: 15px;
+        height: 35px;
+        width: 35px;
+        margin: 0;
+        border: 1px solid #222222;
+    }
+
+    .list .item .img {
+        box-shadow: none !important;
+    }
+
+    .list .item .img img{
+        padding: 20px;
+        top: 75px;
+    }
+
+    .list .item .title {
+        box-shadow: none !important;
+        font-size: 10px;
+        max-width: 75%;
+        font-family: 'Oswald';
+    }
+
+    .list{
+        padding: 10px 70px;
+    }
+}
+
+.activeSlide {
+    transform: scale(1.4) !important;
+    /* transition: transform 0.3s ease-in-out; */
+    z-index: 10;
+    /* box-shadow: 0 0 15px rgba(0,0,0,0.2); */
+  }
+  

@@ -1,0 +1,16 @@
+.mobil-menu-item {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(182, 182, 183);
+    border-bottom-color: rgb(182, 182, 183);
+    border-color: rgb(182, 182, 183);
+    margin: 0px 24px;
+    padding: 16px 0px;
+    color: rgb(16, 24, 40);
+}
