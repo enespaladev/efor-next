@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getBlogs() {
   try {
-    const response = await axios.get("https://nutsroastermachine.com/api/blogs");
+    const response = await axios.get("https://api.nutsroastermachine.com/api/blogs");
 
     if (response.status !== 200) {
       throw new Error("Kategoriler alınamadı");

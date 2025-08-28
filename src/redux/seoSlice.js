@@ -3,7 +3,7 @@ import { configureStore, createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const fetchSeoData = createAsyncThunk(
   'seo/fetchData',
   async (path = '/') => {
-    const response = await fetch(`https://nutsroastermachine.com/api/seo`);
+    const response = await fetch(`https://api.nutsroastermachine.com/api/seo`);
     return response.json();
   }
 );

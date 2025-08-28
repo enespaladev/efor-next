@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchCategories = createAsyncThunk(
   'category/fetchCategories',
   async () => {
-    const res = await axios.get('https://nutsroastermachine.com/api/categories');
+    const res = await axios.get('https://api.nutsroastermachine.com/api/categories');
     return res.data;
   }
 );

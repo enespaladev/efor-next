@@ -67,7 +67,7 @@ function ContactFormContent() {
 
 
     const api = axios.create({
-        baseURL: "https://nutsroastermachine.com/api",
+        baseURL: "https://api.nutsroastermachine.com/api",
         timeout: 15000,
         headers: { "Content-Type": "application/json" },
     });

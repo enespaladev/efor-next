@@ -1,6 +1,6 @@
 export async function getSeoData() {
   try {
-    const response = await fetch('https://nutsroastermachine.com/api/seo', {
+    const response = await fetch('https://api.nutsroastermachine.com/api/seo', {
       next: { revalidate: 3600 }, // 1 saat cache
       timeout: 5000
     });

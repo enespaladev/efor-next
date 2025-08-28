@@ -382,10 +382,10 @@ function ProductDetailContent() {
     },
   ];
 
-  const base = 'https://nutsroastermachine.com';
+  const base = 'https://api.nutsroastermachine.com';
 
   const api = axios.create({
-    baseURL: "https://nutsroastermachine.com/api",
+    baseURL: "https://api.nutsroastermachine.com/api",
     timeout: 15000,
     headers: {
       "Content-Type": "application/json",

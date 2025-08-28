@@ -4,7 +4,7 @@ export async function generateMetadata({ params }) {
   
     // API'den SEO verilerini çek
     try {
-      const seoData = await fetch(`https://nutsroastermachine.com/api/seo`)
+      const seoData = await fetch(`https://api.nutsroastermachine.com/api/seo`)
         .then(res => res.json());
   
       return {

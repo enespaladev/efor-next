@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getCategories() {
   try {
-    const response = await axios.get("https://nutsroastermachine.com/api/categories");
+    const response = await axios.get("https://api.nutsroastermachine.com/api/categories");
 
     if (response.status !== 200) {
       throw new Error("Kategoriler alınamadı");
@@ -17,7 +17,7 @@ export async function getCategories() {
 
 export async function getProducts() {
   try {
-    const response = await fetch('https://nutsroastermachine.com/api/products', {
+    const response = await fetch('https://api.nutsroastermachine.com/api/products', {
       next: { revalidate: 3600 }
     });
 

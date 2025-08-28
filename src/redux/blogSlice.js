@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://nutsroastermachine.com/api',
+  baseURL: 'https://api.nutsroastermachine.com/api',
   timeout: 15000,
 });
 

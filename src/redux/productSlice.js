@@ -5,7 +5,7 @@ import axios from 'axios';
 export const fetchProductsByCategory = createAsyncThunk(
   'product/fetchProductsByCategory',
   async (catId) => {
-    const res = await axios.get(`https://nutsroastermachine.com/api/products?cat_id=${catId}`);
+    const res = await axios.get(`https://api.nutsroastermachine.com/api/products?cat_id=${catId}`);
     return res.data;
   }
 );
@@ -13,7 +13,7 @@ export const fetchProductsByCategory = createAsyncThunk(
 export const fetchProductById = createAsyncThunk(
   'product/fetchProductById',
   async (Id) => {
-    const res = await axios.get(`https://nutsroastermachine.com/api/products?id=${Id}`);
+    const res = await axios.get(`https://api.nutsroastermachine.com/api/products?id=${Id}`);
     return res.data?.[0] ?? null;
   }
 );
