@@ -5,7 +5,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 // import Footer from '@/components/footer/testFooter';
 import LanguageInitializer from '@/components/LanguageInitiliazer'
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default async function LangLayout({ children, params }) {
   const { lang } = await params
@@ -20,6 +20,7 @@ export default async function LangLayout({ children, params }) {
             <Header />
             <main style={{ flex: 1 }}> {/* ← Bu önemli */}
               {children}
+              <SpeedInsights />
             </main>
             <Footer />
           </LanguageInitializer>
