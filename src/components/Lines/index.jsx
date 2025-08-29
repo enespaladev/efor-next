@@ -5,7 +5,9 @@ import { LinesData } from './data';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import Container from '../Container/container';
-import { fetchBlogs, fetchLatestBlogs } from '@/redux/blogSlice';
+import { fetchBlogs, fetchLatestBlogs, setSelectedBlogId } from '@/redux/blogSlice';
+import Link from 'next/link';
+import { getBlogDetailUrl } from '@/lib/routeHelpers';
 
 function Lines() {
     const dispatch = useDispatch();
@@ -32,7 +34,7 @@ function Lines() {
 
                 <div className='mt-5'>
                     <Container>
-                        <div className='px-4 flex mx-auto sm:px-12 md:px-32 lg:px-32 xl:px-32 gap-9'>
+                        <div className='flex mx-auto sm:px-12 md:px-32 lg:px-32 xl:px-32 gap-9'>
                             <div className='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8 pt-8 pb-20'>
                                 {isLoading
                                     ? skeletonArray.map((_, index) => (
@@ -49,9 +51,15 @@ function Lines() {
                                             <div key={index} className={style.blogItem}>
                                                 <div className={style.blogItemContainer}>
                                                     <div className={style.blogItemImage}>
-                                                        <a href={`https://nutsroastermachine.com/en/blog-detail/${item.slug_en}`}>
+                                                        <Link
+                                                            href={getBlogDetailUrl(language, item[`slug_${language}`])}
+                                                            onClick={() => {
+                                                                sessionStorage.setItem('selectedBlogId', item.id);
+                                                                dispatch(setSelectedBlogId(item.id));
+                                                            }}
+                                                        >
                                                             <img src={item.photo} alt={item[`title_${language}`] || ''} />
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                     <div className={style.blogItemContent}>
                                                         <span className={style.blogTitle}>
@@ -61,12 +69,15 @@ function Lines() {
                                                             {item[`summary_${language}`]}
                                                         </p>
                                                         <div className={style.blogItemBottom}>
-                                                            <a
-                                                                href={`https://nutsroastermachine.com/en/blog-detail/${item.slug_en}`}
-                                                                className="blogItemButton"
+                                                            <Link
+                                                                href={getBlogDetailUrl(language, item[`slug_${language}`])}
+                                                                onClick={() => {
+                                                                    sessionStorage.setItem('selectedBlogId', item.id);
+                                                                    dispatch(setSelectedBlogId(item.id));
+                                                                }}
                                                             >
-                                                                Read More - {item[`title_en`]}
-                                                            </a>
+                                                                <FormattedMessage id='button_text' /> - {item[`title_${language}`]}
+                                                            </Link>
                                                         </div>
                                                     </div>
                                                 </div>

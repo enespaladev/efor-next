@@ -10,6 +10,9 @@ import { fetchCategories } from '@/redux/categorySlice';
 import Image from 'next/image';
 import "swiper/css";
 import 'swiper/css/navigation';
+import { getProductCategoryUrl } from '@/lib/routeHelpers';
+import Link from 'next/link';
+import { routesMap } from '@/lib/routes';
 
 export function SkeletonCard() {
   return (
@@ -67,7 +70,7 @@ function ProductSlider() {
         const link = document.createElement('link');
         link.rel = 'preload';
         link.as = 'image';
-        link.href = `https://nutsroastermachine.com/${item.photo}`;
+        link.href = `https://api.nutsroastermachine.com/${item.photo}`;
         if (index === 0) {
           link.fetchPriority = 'high';
         }
@@ -76,22 +79,26 @@ function ProductSlider() {
     }
   }, [categories, isClient]);
 
+  const productsHref = routesMap['products'][language];
+
   return (
     <div className={`${styles.ProductSliderSection} justify-center flex flex-col flex-initial items-center`}>
-      <div className='text-center w-1/2 max-sm:w-full max-sm:px-5 max-sm:pt-11'>
-        <h1 className={styles.homeProductSliderTitle}>
-          <FormattedMessage id='ProductSliderMessages.title' />
-        </h1>
+      <div className='text-center w-1/2 max-sm:w-full max-sm:px-5 max-sm:pt-11 mb-12'>
+        <Link href={productsHref}>
+          <h1 className={styles.homeProductSliderTitle}>
+            <FormattedMessage id='ProductSliderMessages.title' />
+          </h1>
+        </Link>
         <p className={styles.homeProductSliderText}>
           <FormattedMessage id='ProductSliderMessages.desc' />
         </p>
       </div>
 
-      <div className="w-full min-h-[400px] flex items-center">
+      <div className="w-full flex items-center">
         {!isFetched ? (
           <SkeletonSwiper />
         ) : (
-          <div className={`${styles.ProductSwiper} ProductSwiper container max-w-fit h-full mx-auto`}>
+          <div className={`${styles.ProductSwiper} ProductSwiper container max-w-fit h-full mx-auto max-sm:mb-0 mb-20`}>
             <Swiper
               className={`${styles.swiper} h-full w-full`}
               effect={'coverflow'}
@@ -101,8 +108,8 @@ function ProductSlider() {
               grabCursor={false}
               slidesPerView={1}
               spaceBetween={50}
-              lazy={true} // Lazy loading aktif
-              preloadImages={false} // Preload images kapalı
+              // lazy={true} // Lazy loading aktif
+              // preloadImages={false} // Preload images kapalı
               watchSlidesProgress={true}
               breakpoints={{
                 768: {
@@ -126,10 +133,18 @@ function ProductSlider() {
                   className={index === activeIndex ? styles.activeSlide : ''}
                 >
                   <div className={`${styles.list} h-full`}>
-                    <a href="" className={styles.item}>
+                    <Link
+                      className={styles.item}
+                      key={index}
+                      href={getProductCategoryUrl(language, item[`slug_${language}`])}
+                      onClick={() => {
+                        sessionStorage.setItem('selectedCategoryId', item.id);
+                        dispatch(setSelectedCategoryId(item.id));
+                      }}
+                    >
                       <span className={styles.img}>
                         <Image
-                          src={`https://nutsroastermachine.com/${item.photo}`}
+                          src={`https://api.nutsroastermachine.com/${item.photo}`}
                           alt={item[titlekey]}
                           width={400}
                           height={300}
@@ -140,7 +155,7 @@ function ProductSlider() {
                           placeholder="blur"
                           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAQIAAxEhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bvTHzIIlqOQ26H0AdHo9AT4JYtH8AkBYWVfUCtVP5P8AZ"
                           sizes={index < 3 ? "400px" : "300px"}
-                          style={{ 
+                          style={{
                             objectFit: "cover",
                             width: '100%',
                             height: 'auto'
@@ -157,7 +172,7 @@ function ProductSlider() {
                         />
                       </span>
                       <h2 className={styles.title}>{item[titlekey]}</h2>
-                    </a>
+                    </Link>
                   </div>
                 </SwiperSlide>
               ))}

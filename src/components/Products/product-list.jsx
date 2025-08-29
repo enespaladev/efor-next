@@ -91,7 +91,7 @@ export default function ProductList() {
                       }}
                     >
                       <img
-                        src={`https://nutsroastermachine.com/${firstImage}`}
+                        src={`https://api.nutsroastermachine.com/${firstImage}`}
                         alt={item[language === 'tr' ? 'title' : `title_${language}`]}
                         className='w-full h-[200px] object-cover rounded'
                       />

@@ -15,6 +15,24 @@ import { getProductCategoryUrl } from '@/lib/routeHelpers';
 import { setSelectedCategoryId } from '@/redux/categorySlice';
 import Container from '../Container/container';
 
+import localFont from 'next/font/local';
+
+const oswald = localFont({
+  src: [
+    {
+      path: '../../../public/fonts/Oswald/Oswald-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../../public/fonts/Oswald/Oswald-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+})
+
 function ProductCategories() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrolled2, setIsScrolled2] = useState(false);
@@ -49,7 +67,7 @@ function ProductCategories() {
                       dispatch(setSelectedCategoryId(item.id));
                     }}
                   >
-                    <img src={`https://nutsroastermachine.com/${item.photo}`} alt="" />
+                    <img src={`https://api.nutsroastermachine.com/${item.photo}`} alt="" />
                   </Link>
                 </div>
                 <div className='categoryContent'>

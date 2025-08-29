@@ -11,44 +11,44 @@ import Container from '../Container/container';
 
 const certificates = [
   {
-    bigImage: 'frontend/images/sertifikalar/belge-büyük/iso-9001.webp',
-    logoImage: 'frontend/images/sertifikalar/logo/iso-9001-logo.webp',
-    certificateImage: 'frontend/images/sertifikalar/belge/iso-9001-belge.webp',
+    bigImage: '/img/sertifikalar/belge-büyük/iso-9001.webp',
+    logoImage: '/img/sertifikalar/logo/iso-9001-logo.webp',
+    certificateImage: '/img/sertifikalar/belge/iso-9001-belge.webp',
   },
   {
-    bigImage: 'frontend/images/sertifikalar/belge-büyük/ISO 10002-1.webp',
-    logoImage: 'frontend/images/sertifikalar/logo/iso-10002-logo.webp',
-    certificateImage: 'frontend/images/sertifikalar/belge/iso-10002-belge.webp',
+    bigImage: '/img/sertifikalar/belge-büyük/ISO 10002-1.webp',
+    logoImage: '/img/sertifikalar/logo/iso-10002-logo.webp',
+    certificateImage: '/img/sertifikalar/belge/iso-10002-belge.webp',
   },
   {
-    bigImage: 'frontend/images/sertifikalar/belge-büyük/ISO 14001-1.webp',
-    logoImage: 'frontend/images/sertifikalar/logo/iso-14001-logo.webp',
-    certificateImage: 'frontend/images/sertifikalar/belge/iso-14001-belge.webp',
+    bigImage: '/img/sertifikalar/belge-büyük/ISO 14001-1.webp',
+    logoImage: '/img/sertifikalar/logo/iso-14001-logo.webp',
+    certificateImage: '/img/sertifikalar/belge/iso-14001-belge.webp',
   },
   {
-    bigImage: 'frontend/images/sertifikalar/belge-büyük/ISO 45001-1.webp',
-    logoImage: 'frontend/images/sertifikalar/logo/iso-45001-logo.webp',
-    certificateImage: 'frontend/images/sertifikalar/belge/iso-45001-belge.webp',
+    bigImage: '/img/sertifikalar/belge-büyük/ISO 45001-1.webp',
+    logoImage: '/img/sertifikalar/logo/iso-45001-logo.webp',
+    certificateImage: '/img/sertifikalar/belge/iso-45001-belge.webp',
   },
   {
-    bigImage: 'frontend/images/sertifikalar/logo/ce-logo.webp',
-    logoImage: 'frontend/images/sertifikalar/logo/ce-logo.webp',
-    certificateImage: 'frontend/images/sertifikalar/logo/ce-logo.webp',
+    bigImage: '/img/sertifikalar/logo/ce-logo.webp',
+    logoImage: '/img/sertifikalar/logo/ce-logo.webp',
+    certificateImage: '/img/sertifikalar/logo/ce-logo.webp',
   },
   {
-    bigImage: 'frontend/images/sertifikalar/logo/etl.webp',
-    logoImage: 'frontend/images/sertifikalar/logo/etl.webp',
-    certificateImage: 'frontend/images/sertifikalar/logo/etl.webp',
+    bigImage: '/img/sertifikalar/logo/etl.webp',
+    logoImage: '/img/sertifikalar/logo/etl.webp',
+    certificateImage: '/img/sertifikalar/logo/etl.webp',
   },
   {
-    bigImage: 'frontend/images/sertifikalar/logo/eac.webp',
-    logoImage: 'frontend/images/sertifikalar/logo/eac.webp',
-    certificateImage: 'frontend/images/sertifikalar/logo/eac.webp',
+    bigImage: '/img/sertifikalar/logo/eac.webp',
+    logoImage: '/img/sertifikalar/logo/eac.webp',
+    certificateImage: '/img/sertifikalar/logo/eac.webp',
   },
   {
-    bigImage: 'frontend/images/sertifikalar/logo/saso.webp',
-    logoImage: 'frontend/images/sertifikalar/logo/saso.webp',
-    certificateImage: 'frontend/images/sertifikalar/logo/saso.webp',
+    bigImage: '/img/sertifikalar/logo/saso.webp',
+    logoImage: '/img/sertifikalar/logo/saso.webp',
+    certificateImage: '/img/sertifikalar/logo/saso.webp',
   },
 ];
 
@@ -58,7 +58,8 @@ function Certificates() {
   const [index, setIndex] = useState(0);
 
   const slides = certificates.map((item) => ({
-    src: `https://nutsroastermachine.com/${item.bigImage}`,
+    // src: `https://api.nutsroastermachine.com/${item.bigImage}`,
+    src: `${item.bigImage}`,
   }));
 
   const openLightbox = (i) => {
@@ -68,7 +69,7 @@ function Certificates() {
 
   return (
     <Container>
-      <div className='mx-auto max-sm:px-0 max-sm:overflow-hidden px-80 mb-10'>
+      <div className='mx-auto max-sm:px-0 max-sm:overflow-hidden px-80 mb-20'>
         <div className='text-center mb-3'>
           <span className='font-bold capitalize color-1 text-5xl'>
             <FormattedMessage id='CertificatesMessages.title' />
@@ -79,11 +80,11 @@ function Certificates() {
             {certificates.map((item, idx) => (
               <li key={idx} onClick={() => openLightbox(idx)} className='cursor-pointer'>
                 <img
-                  src={`https://nutsroastermachine.com/${item.logoImage}`}
+                  src={`${item.logoImage}`}
                   alt=""
                 />
                 <img
-                  src={`https://nutsroastermachine.com/${item.certificateImage}`}
+                  src={`${item.certificateImage}`}
                   alt=""
                 />
               </li>

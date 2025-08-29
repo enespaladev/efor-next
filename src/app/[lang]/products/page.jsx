@@ -4,7 +4,7 @@ import ProductCategories from '@/components/Products'
 import { getSeoData, getPageSeoData } from '@/lib/seoUtils';
 
 export async function generateMetadata({ params }) {
-  const { lang } = params;
+  const { lang } = await params;
   const seoData = await getSeoData();
   const pageSeo = getPageSeoData(seoData, lang, 'urunler')
 

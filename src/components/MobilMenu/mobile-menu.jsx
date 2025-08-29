@@ -93,7 +93,7 @@ export default function MobileMenu() {
         <div className=" top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 p-6 relative flex items-center justify-between">
           <Link href="/">
             <img
-              src="https://nutsroastermachine.com//storage/photos/30/logo-dark2.png"
+              src="https://api.nutsroastermachine.com//storage/photos/30/logo-dark2.png"
               width={75}
               height={45}
               alt="Logo"

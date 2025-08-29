@@ -21,10 +21,6 @@
       display: none;
     }
   }
-
-  .swiper {
-    min-height: 500px !important;
-  }
   
   /* Swiper slide stilleri */
   .home-banner-slider .swiper-slide {

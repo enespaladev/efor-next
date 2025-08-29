@@ -81,7 +81,7 @@
 //             <div className='wrap_header trans-0-3 flex items-center'>
 //               <div className='logo'>
 //                 <Link href="/">
-//                   <img src="https://nutsroastermachine.com//storage/photos/30/logo-dark2.png" width={97} height={60} alt="Logo" />
+//                   <img src="https://api.nutsroastermachine.com//storage/photos/30/logo-dark2.png" width={97} height={60} alt="Logo" />
 //                 </Link>
 //               </div>
 

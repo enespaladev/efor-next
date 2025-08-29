@@ -47,7 +47,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'nutsroastermachine.com',
+        hostname: 'api.nutsroastermachine.com',
         port: '',
         pathname: '/**',
       },

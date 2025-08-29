@@ -183,16 +183,6 @@ function HomeSwiper() {
           navigation={false}
           loop={true}
           modules={[Navigation]}
-          onInit={(swiper) => {
-            // Swiper ilk hazır olduğunda çalışacak
-            setTimeout(() => {
-              const slides = swiper.el.querySelectorAll('.swiper-slide');
-              slides.forEach((slide) => {
-                slide.style.display = 'block';
-              });
-              swiper.update();
-            }, 10);
-          }}
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={slide.id || index}>

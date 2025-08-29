@@ -37,7 +37,7 @@ export default function Footer() {
       <div className='footer-left'>
         <img
           className='w-[90px] h-[56px] object-contain'
-          src="https://nutsroastermachine.com/frontend/images/logo-light.png"
+          src="/img/logo-light.png"
           alt=""
         />
         <br />
