@@ -9,7 +9,7 @@ import { FaPlay } from "react-icons/fa6";
 import { about_data } from './data';
 import { FormattedMessage } from 'react-intl';
 import { useSelector } from 'react-redux';
-const video_1 = "/img/fabrika.mp4";
+const video_1 = "https://api.nutsroastermachine.com/public/frontend/videos/fabrika.mp4";
 
 import VideoModal from '@/components/ui/video-modal';
 import Container from '../Container/container';
