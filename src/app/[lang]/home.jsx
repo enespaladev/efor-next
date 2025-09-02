@@ -12,15 +12,16 @@ import MobileMenu from '@/components/MobilMenu/mobile-menu'
 
 import dynamic from "next/dynamic";
 
-const ClientSwiper = dynamic(() => import('@/components/HomeSwiper'), {
-  ssr: false,
-  loading: () => <div style={{ minHeight: "500px" }} />, // Swiper yüksekliği kadar boşluk bırak
-});
+// const ClientSwiper = dynamic(() => import('@/components/HomeSwiper'), {
+//   ssr: false,
+//   loading: () => <div style={{ minHeight: "500px" }} />,
+// });
 
 function Home() {
   return (
     <>
-      <ClientSwiper />
+      {/* <ClientSwiper /> */}
+      <HomeSwiper />
       <ProductSlider />
       <AfterSelling />
       <Certificates />
