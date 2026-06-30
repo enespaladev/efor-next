@@ -38,6 +38,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    qualities: [75, 85],
     remotePatterns: [
       {
         protocol: 'https',
@@ -45,7 +46,6 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
-      qualities: [75, 85],
       {
         protocol: 'https',
         hostname: 'api.nutsroastermachine.com',
