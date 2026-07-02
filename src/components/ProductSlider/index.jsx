@@ -146,6 +146,7 @@ function ProductSlider() {
                         <Image
                         src={`https://api.nutsroastermachine.com/${item.photo}`}
                         alt={item[titlekey]}
+                        unoptimized={true}
                         width={400}
                         height={300}
                         loading={index < 3 ? "eager" : "lazy"}
