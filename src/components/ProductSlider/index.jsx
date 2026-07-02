@@ -144,32 +144,20 @@ function ProductSlider() {
                     >
                       <span className={styles.img}>
                         <Image
-                          src={`https://api.nutsroastermachine.com/${item.photo}`}
-                          alt={item[titlekey]}
-                          width={400}
-                          height={300}
-                          loading={index < 3 ? "eager" : "lazy"}
-                          priority={index === 0}
-                          fetchPriority={index === 0 ? "high" : "auto"}
-                          quality={index < 3 ? 85 : 75} // İlk 3 resim daha yüksek kalite
-                          placeholder="blur"
-                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAQIAAxEhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bvTHzIIlqOQ26H0AdHo9AT4JYtH8AkBYWVfUCtVP5P8AZ"
-                          sizes={index < 3 ? "400px" : "300px"}
-                          style={{
-                            objectFit: "cover",
-                            width: '100%',
-                            height: 'auto'
-                          }}
-                          className="aspect-[4/3]"
-                          onLoadingComplete={() => {
-                            // İlk görüntü yüklendiğinde LCP'yi optimize et
-                            if (index === 0) {
-                              requestIdleCallback(() => {
-                                // Performans optimizasyonu için callback
-                              });
-                            }
-                          }}
-                        />
+                        src={`https://api.nutsroastermachine.com/${item.photo}`}
+                        alt={item[titlekey]}
+                        width={400}
+                        height={300}
+                        loading={index < 3 ? "eager" : "lazy"}
+                        priority={index === 0}
+                        fetchPriority={index === 0 ? "high" : "auto"}
+                        // quality satırını tamamen silin
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,..."
+                        sizes={index < 3 ? "400px" : "300px"}
+                        style={{ objectFit: "cover", width: '100%', height: 'auto' }}
+                        className="aspect-[4/3]"
+                      />
                       </span>
                       <h2 className={styles.title}>{item[titlekey]}</h2>
                     </Link>
