@@ -145,7 +145,6 @@ function ProductSlider() {
                       <span className={styles.img}>
                         <Image
                         src={`https://api.nutsroastermachine.com/${item.photo}`}
-                        unoptimized
                         alt={item[titlekey]}
                         width={400}
                         height={300}
