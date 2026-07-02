@@ -32,7 +32,7 @@
     "leaflet": "^1.9.4",
     "locomotive-scroll": "^5.0.0-beta.21",
     "lucide-react": "^0.534.0",
-    "next": "15.4.3",
+    "next": "15.4.10",
     "next-videos": "^1.4.1",
     "postcss": "^8.5.6",
     "react": "19.1.0",
